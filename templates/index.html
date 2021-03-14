@@ -1,0 +1,355 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+  Shorten Anything
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+    <div id="SVGheroSection" class="svg-preloader d-lg-flex position-relative border-bottom z-index-2">
+      <div class="container d-lg-flex align-items-lg-center flex-lg-wrap height-lg-100vh text-center space-top-2 space-top-md-4 space-top-lg-3">
+        <div class="w-100 mx-auto mb-9 mb-lg-0">
+          <div class="mb-5">
+            <h1 class="display-4 font-size-md-down-5 font-weight-semi-bold">Summarise Anything!</h1>
+            <p>I built Shorty to help people better understand obscure terms and conditions before clicking on that treacherous checkbox. But, you can use it to shorten anything you want</p>
+          </div>
+
+          <!-- Form -->
+          <form class="js-validate w-100 mx-md-auto mb-4" action="{{ url_for('shorten') }}" method="POST">
+            <div class="js-form-message">
+              <label class="sr-only" for="text">The text you want to shorten <span class="text-danger">*</span></label>
+              <div class="input-group">
+                <textarea class="form-control" name="text" id="text" placeholder="Enter the text you want to summarise" required
+                          rows="8"
+                          data-msg="Please enter some valid text."
+                          data-error-class="u-has-error"
+                          data-success-class="u-has-success"></textarea>
+              </div>
+            </div>
+            <button type="submit" id="shortenButton" class="btn btn-primary transition-3d-hover btn-wide mt-3">Shorten It!</button>
+          </form>
+          <!-- End Form -->
+
+          <div class="card bg-success text-white p-3 mb-3"
+               id="summary"
+               style="display: none;"
+               data-animation="fadeInUp"
+               data-animation-delay="800"
+               data-animation-duration="1500"
+          ></div>
+
+          <div class="small">
+            <span class="font-weight-medium">View a demo:</span>
+
+            <!-- Fancybox -->
+            <a class="js-fancybox link-muted" href="javascript:;"
+               data-src="//vimeo.com/167434033"
+               data-speed="700"
+               data-animate-in="zoomIn"
+               data-animate-out="zoomOut"
+               data-caption="Front - Responsive Website Template">
+              <small class="fas fa-play text-primary mr-1"></small>
+              Play video
+            </a>
+            <!-- End Fancybox -->
+          </div>
+        </div>
+      </div>
+
+      <!-- SVG Component -->
+      <div class="d-none d-lg-block content-centered-y left-0 w-100 max-width-40 z-index-n1">
+        <figure class="ie-abstract-shapes-1">
+          <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/components/abstract-shapes-1.svg') }}" alt="Image Description"
+               data-parent="#SVGheroSection">
+        </figure>
+      </div>
+      <!-- End SVG Component -->
+
+      <!-- SVG Component -->
+      <div class="d-none d-lg-block content-centered-y right-0 w-100 max-width-35 z-index-n1">
+        <figure class="ie-abstract-shapes-10">
+          <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/components/abstract-shapes-10.svg') }}" alt="Image Description"
+               data-parent="#SVGheroSection">
+        </figure>
+      </div>
+      <!-- End SVG Component -->
+    </div>
+    <!-- End Hero Section -->
+
+    <!-- Features Section -->
+    <div id="featuresSection" class="container space-2 space-md-3">
+      <!-- Title -->
+      <div class="w-md-80 w-lg-40 text-center mx-md-auto mb-9">
+        <small class="text-secondary text-uppercase font-weight-medium mb-2">Benefits</small>
+        <h2 class="h3 font-weight-semi-bold">Shorten all sorts of text</h2>
+      </div>
+      <!-- End Title -->
+
+      <div id="SVGmockupBg" class="svg-preloader">
+        <!-- Nav Classic -->
+        <div class="position-relative w-lg-85 bg-white text-center z-index-2 mx-lg-auto">
+          <ul class="nav nav-classic nav-rounded nav-shadow nav-justified" id="pills-tab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link font-weight-medium active" id="pills-one-tab" data-toggle="pill" href="#pills-one" role="tab" aria-controls="pills-one" aria-selected="true">
+                <div class="d-md-flex justify-content-md-center align-items-md-center">
+                  <figure class="ie-height-40 d-none d-md-block w-100 max-width-6 mr-3">
+                    <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/icons/icon-14.svg') }}" alt="SVG"
+                         data-parent="#SVGmockupBg">
+                  </figure>
+                  Terms & Conditions
+                </div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link font-weight-medium" id="pills-two-tab" data-toggle="pill" href="#pills-two" role="tab" aria-controls="pills-two" aria-selected="false">
+                <div class="d-md-flex justify-content-md-center align-items-md-center">
+                  <figure class="ie-height-40 d-none d-md-block w-100 max-width-6 mr-3">
+                    <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/icons/icon-21.svg') }}" alt="SVG"
+                         data-parent="#SVGmockupBg">
+                  </figure>
+                  Blogs
+                </div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link font-weight-medium" id="pills-three-tab" data-toggle="pill" href="#pills-three" role="tab" aria-controls="pills-three" aria-selected="false">
+                <div class="d-md-flex justify-content-md-center align-items-md-center">
+                  <figure class="ie-height-40 d-none d-md-block w-100 max-width-6 mr-3">
+                    <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/icons/icon-5.svg') }}" alt="SVG"
+                         data-parent="#SVGmockupBg">
+                  </figure>
+                  Book Texts
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- End Nav Classic -->
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade pt-9 show active" id="pills-one" role="tabpanel" aria-labelledby="pills-one-tab">
+            <!-- Mockup Block -->
+            <div class="row justify-content-lg-between align-items-lg-center">
+              <div class="col-lg-4 mb-9 mb-lg-0">
+                <!-- Info -->
+                <div class="mb-5">
+                  <h3 class="h4 font-weight-semi-bold"></h3>
+                    <p>This is what <strong>Shorty</strong> was originally intended for. A tool that would help consumers understand the obscure terms and conditions of services, before checking that wolf-in-sheep's-clothing checkbox.</p>
+                </div>
+
+                <ul class="list-unstyled text-secondary font-size-1">
+                  <li class="media my-3">
+                    <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                    <span class="media-body">
+                      Copy &amp; Paste the T&C
+                    </span>
+                  </li>
+                  <li class="media my-3">
+                    <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                    <span class="media-body">
+                     Click on the button
+                    </span>
+                  </li>
+                  <li class="media my-3">
+                    <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                    <span class="media-body">
+                      Read the most important points of the summary.
+                    </span>
+                  </li>
+                </ul>
+                <!-- End Info -->
+              </div>
+
+              <div class="col-lg-7 position-relative">
+                <div class="pl-md-9">
+                  <img class="img-fluid shadow rounded" src="{{ url_for('static', filename='assets/hero-1.png') }}" alt="Summarise terms and conditions" title="Summarise terms and conditions">
+                </div>
+
+                <!-- SVG Component -->
+                <div class="position-absolute bottom-0 left-0 w-75 z-index-n1">
+                  <figure class="ie-abstract-shapes-2">
+                    <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/components/abstract-shapes-2.svg') }}" alt="Image Description"
+                         data-parent="#SVGmockupBg">
+                  </figure>
+                </div>
+                <!-- End SVG Component -->
+              </div>
+            </div>
+            <!-- End Mockup Block -->
+          </div>
+          <div class="tab-pane fade pt-9" id="pills-two" role="tabpanel" aria-labelledby="pills-two-tab">
+            <!-- Mockup Block -->
+            <div class="row justify-content-lg-between align-items-lg-center">
+              <div class="col-lg-4 mb-9 mb-lg-0">
+                <!-- Info -->
+                <div class="mb-5">
+                  <h3 class="h4 font-weight-semi-bold">Then I realised</h3>
+                  <p>Shorty can be used for shortening anything. Literally, any large body of text, like blogs.</p>
+                </div>
+
+                <ul class="list-unstyled text-secondary font-size-1">
+                  <li class="media my-3">
+                    <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                    <span class="media-body">
+                      Do you want a <strong>TL;DR;</strong> for a long blog? We've got you covered.
+                    </span>
+                  </li>
+                  <li class="media my-3">
+                    <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                    <span class="media-body">
+                      Just copy &amp; paste the blog you don't want to read, but kinda have to.
+                    </span>
+                  </li>
+                  <li class="media my-3">
+                    <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                    <span class="media-body">
+                      Get the most important points of the text in a jiffy!
+                    </span>
+                  </li>
+                </ul>
+                <!-- End Info -->
+              </div>
+
+              <div class="col-lg-7 position-relative">
+                <div class="pl-md-9">
+                  <img class="img-fluid shadow-sm rounded" src="{{ url_for('static', filename='assets/hero-2.png') }}" alt="Summarise blog pieces too;" title="Summarise blog pieces too;">
+                </div>
+
+                <!-- SVG Component -->
+                <div class="position-absolute bottom-0 left-0 w-75 z-index-n1">
+                  <figure class="ie-abstract-shapes-4">
+                    <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/components/abstract-shapes-4.svg') }}" alt="Image Description"
+                         data-parent="#SVGmockupBg">
+                  </figure>
+                </div>
+                <!-- End SVG Component -->
+              </div>
+            </div>
+            <!-- End Mockup Block -->
+          </div>
+          <div class="tab-pane fade pt-9" id="pills-three" role="tabpanel" aria-labelledby="pills-three-tab">
+            <!-- Mockup Block -->
+            <div class="row justify-content-lg-between align-items-lg-center">
+              <div class="col-lg-4 mb-9 mb-lg-0">
+                <!-- Info -->
+                <div class="mb-5">
+                  <h3 class="h4 font-weight-semi-bold">There's no word limit</h3>
+                  <p>Which means Shorty can take on texts from books too. You know, those tedious chapters which need to be covered a day before.</p>
+                </div>
+                <!-- End Info -->
+              </div>
+
+              <div class="col-lg-7 position-relative">
+                <div class="pl-md-9">
+                  <img class="img-fluid shadow-sm rounded" src="{{ url_for('static', filename='assets/hero-3.png') }}" alt="Image Description">
+                </div>
+
+                <!-- SVG Component -->
+                <div class="position-absolute bottom-0 left-0 w-75 z-index-n1">
+                  <figure class="ie-abstract-shapes-3">
+                    <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/components/abstract-shapes-3.svg') }}" alt="Image Description"
+                         data-parent="#SVGmockupBg">
+                  </figure>
+                </div>
+                <!-- End SVG Component -->
+              </div>
+            </div>
+            <!-- End Mockup Block -->
+          </div>
+        </div>
+        <!-- End Tab Content -->
+      </div>
+    </div>
+    <!-- End Features Section -->
+
+    <hr class="my-0">
+
+    <!-- Our Story Section -->
+    <div id="ourStorySection" class="svg-preloader container space-top-2 space-top-md-3">
+      <div class="w-lg-75 position-relative p-lg-9 mx-lg-auto">
+        <!-- Video Block -->
+        <div class="bg-white shadow rounded p-2">
+          <div class="height-400 bg-img-hero-center" style="background-image: url("{{ url_for('static', filename='assets/img/900x450/img11.jpg') }}";">
+            <a class="js-fancybox u-media-player u-media-player--centered" href="javascript:;"
+               data-src="//vimeo.com/167434033"
+               data-speed="700"
+               data-animate-in="zoomIn"
+               data-animate-out="zoomOut"
+               data-caption="Front - Responsive Website Template">
+              <span class="u-media-player__icon u-media-player__icon--lg">
+                <span class="fas fa-play u-media-player__icon-inner mr-1"></span>
+              </span>
+            </a>
+          </div>
+        </div>
+        <!-- End Video Block -->
+
+        <!-- SVG Component -->
+        <div class="content-centered-y w-75 z-index-n1">
+          <figure class="ie-abstract-shapes-7">
+            <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/components/abstract-shapes-7.svg') }}" alt="Image Description"
+                 data-parent="#ourStorySection">
+          </figure>
+        </div>
+        <!-- End SVG Component -->
+      </div>
+    </div>
+    <!-- Our Story Section -->
+
+    <!-- CTA Section -->
+    <div id="SVGctaSection" class="svg-preloader position-relative gradient-half-primary-v1 text-center z-index-2 overflow-hidden">
+      <div class="container space-2">
+        <h3 class="h2 text-info font-weight-semi-bold mb-3">Ready to get started?</h3>
+        <p class="lead text-white mb-5">
+          <span class="font-weight-semi-bold">Shorty</span> – shorten anything.
+        </p>
+        <a class="btn btn-white btn-wide transition-3d-hover js-go-to" href="#homeSection">Shorten Now!</a>
+      </div>
+
+      <!-- SVG Component -->
+      <figure class="position-absolute top-0 left-0 w-100 max-width-27 z-index-n1">
+        <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/components/abstract-shapes-8.svg') }}" alt="Image Description"
+             data-parent="#SVGctaSection">
+      </figure>
+      <!-- End SVG Component -->
+
+      <!-- SVG Component -->
+      <figure class="position-absolute bottom-0 right-0 w-100 max-width-27 z-index-n1">
+        <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/components/abstract-shapes-5.svg') }}" alt="Image Description"
+             data-parent="#SVGctaSection">
+      </figure>
+      <!-- End SVG Component -->
+    </div>
+    <!-- End CTA Section -->
+{% endblock %}
+
+{% block scripts %}
+<script>
+  var toggleLoading = function (id) {
+    if ($('#' + id).attr('disabled')) {
+      $('#' + id).html('Shorten It!');
+      $('#' + id).attr('disabled', false);
+    }
+    else {
+      $('#' + id).html(' <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>\n' +
+              '  Loading...');
+      $('#' + id).attr('disabled', true);
+    }
+  }
+  $(document).on('ready', function () {
+    $('#shortenButton').on('click', function (e) {
+      e.preventDefault();
+      toggleLoading('shortenButton');
+
+      $.post('{{ url_for("shorten") }}', {
+        text: $('#text').val()
+      }).done(function (summary) {
+        toggleLoading('shortenButton');
+        $('#summary').html(summary);
+        $('#summary').css('display', 'block');
+      })
+    })
+  });
+</script>
+{% endblock %}

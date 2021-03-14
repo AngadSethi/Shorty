@@ -1,0 +1,560 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+  Shorten Anything
+{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+    <div id="SVGheroSection" class="svg-preloader d-lg-flex position-relative border-bottom z-index-2">
+      <div class="container d-lg-flex align-items-lg-center flex-lg-wrap height-lg-100vh text-center space-top-2 space-top-md-4 space-top-lg-3">
+        <div class="w-100 mx-auto mb-9 mb-lg-0">
+          <div class="mb-5">
+            <h1 class="display-4 font-size-md-down-5 font-weight-semi-bold">Shorten Anything!</h1>
+            <p>I built Shorty to help people better understand obscure terms and conditions before clicking on that treacherous checkbox. But, you can use it to shorten anything you want</p>
+          </div>
+
+            <div style="white-space: pre-wrap">{{ summary }}</div>
+
+          <div class="small">
+            <span class="font-weight-medium">View a demo:</span>
+            <a class="link-muted mx-2" href="index.html">Explore live demo</a>
+
+            <!-- Fancybox -->
+            <a class="js-fancybox link-muted" href="javascript:;"
+               data-src="//vimeo.com/167434033"
+               data-speed="700"
+               data-animate-in="zoomIn"
+               data-animate-out="zoomOut"
+               data-caption="Front - Responsive Website Template">
+              <small class="fas fa-play text-primary mr-1"></small>
+              Play video
+            </a>
+            <!-- End Fancybox -->
+          </div>
+        </div>
+
+        <div class="w-lg-50 mt-auto mx-lg-auto">
+          <!-- SVG Icon -->
+          <figure class="ie-enterprise-2">
+            <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/flat-icons/enterprise-2.svg') }}" alt="Image Description"
+                 data-parent="#SVGheroSection">
+          </figure>
+          <!-- End SVG Icon -->
+        </div>
+      </div>
+
+      <!-- SVG Component -->
+      <div class="d-none d-lg-block content-centered-y left-0 w-100 max-width-40 z-index-n1">
+        <figure class="ie-abstract-shapes-1">
+          <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/components/abstract-shapes-1.svg') }}" alt="Image Description"
+               data-parent="#SVGheroSection">
+        </figure>
+      </div>
+      <!-- End SVG Component -->
+
+      <!-- SVG Component -->
+      <div class="d-none d-lg-block content-centered-y right-0 w-100 max-width-35 z-index-n1">
+        <figure class="ie-abstract-shapes-10">
+          <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/components/abstract-shapes-10.svg') }}" alt="Image Description"
+               data-parent="#SVGheroSection">
+        </figure>
+      </div>
+      <!-- End SVG Component -->
+    </div>
+    <!-- End Hero Section -->
+
+    <!-- Features Section -->
+    <div id="featuresSection" class="container space-2 space-md-3">
+      <!-- Title -->
+      <div class="w-md-80 w-lg-40 text-center mx-md-auto mb-9">
+        <small class="text-secondary text-uppercase font-weight-medium mb-2">Features</small>
+        <h2 class="h3 font-weight-semi-bold">A simple template for all businesses</h2>
+      </div>
+      <!-- End Title -->
+
+      <div id="SVGmockupBg" class="svg-preloader">
+        <!-- Nav Classic -->
+        <div class="position-relative w-lg-85 bg-white text-center z-index-2 mx-lg-auto">
+          <ul class="nav nav-classic nav-rounded nav-shadow nav-justified" id="pills-tab" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link font-weight-medium active" id="pills-one-tab" data-toggle="pill" href="#pills-one" role="tab" aria-controls="pills-one" aria-selected="true">
+                <div class="d-md-flex justify-content-md-center align-items-md-center">
+                  <figure class="ie-height-40 d-none d-md-block w-100 max-width-6 mr-3">
+                    <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/icons/icon-14.svg') }}" alt="SVG"
+                         data-parent="#SVGmockupBg">
+                  </figure>
+                  Priority
+                </div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link font-weight-medium" id="pills-two-tab" data-toggle="pill" href="#pills-two" role="tab" aria-controls="pills-two" aria-selected="false">
+                <div class="d-md-flex justify-content-md-center align-items-md-center">
+                  <figure class="ie-height-40 d-none d-md-block w-100 max-width-6 mr-3">
+                    <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/icons/icon-21.svg') }}" alt="SVG"
+                         data-parent="#SVGmockupBg">
+                  </figure>
+                  Achieve
+                </div>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link font-weight-medium" id="pills-three-tab" data-toggle="pill" href="#pills-three" role="tab" aria-controls="pills-three" aria-selected="false">
+                <div class="d-md-flex justify-content-md-center align-items-md-center">
+                  <figure class="ie-height-40 d-none d-md-block w-100 max-width-6 mr-3">
+                    <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/icons/icon-5.svg') }}" alt="SVG"
+                         data-parent="#SVGmockupBg">
+                  </figure>
+                  Performance
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <!-- End Nav Classic -->
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="pills-tabContent">
+          <div class="tab-pane fade pt-9 show active" id="pills-one" role="tabpanel" aria-labelledby="pills-one-tab">
+            <!-- Mockup Block -->
+            <div class="row justify-content-lg-between align-items-lg-center">
+              <div class="col-lg-4 mb-9 mb-lg-0">
+                <!-- Info -->
+                <div class="mb-5">
+                  <h3 class="h4 font-weight-semi-bold">Set your priorities and align your teams</h3>
+                  <p>This is where we sit down, grab a cup of coffee and dial in the details.</p>
+                </div>
+
+                <ul class="list-unstyled text-secondary font-size-1">
+                  <li class="media my-3">
+                    <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                    <span class="media-body">
+                      Understanding who you are
+                    </span>
+                  </li>
+                  <li class="media my-3">
+                    <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                    <span class="media-body">
+                      Whether it's branding, print, UI + UX
+                    </span>
+                  </li>
+                  <li class="media my-3">
+                    <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                    <span class="media-body">
+                      We've got your front end and back end needs covered
+                    </span>
+                  </li>
+                </ul>
+                <!-- End Info -->
+              </div>
+
+              <div class="col-lg-7 position-relative">
+                <div class="pl-md-9">
+                  <img class="img-fluid shadow rounded" src="{{ url_for('static', filename='assets/img/700x525/img1.jpg') }}" alt="Image Description">
+                </div>
+
+                <!-- SVG Component -->
+                <div class="position-absolute bottom-0 left-0 w-75 z-index-n1">
+                  <figure class="ie-abstract-shapes-2">
+                    <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/components/abstract-shapes-2.svg') }}" alt="Image Description"
+                         data-parent="#SVGmockupBg">
+                  </figure>
+                </div>
+                <!-- End SVG Component -->
+              </div>
+            </div>
+            <!-- End Mockup Block -->
+          </div>
+          <div class="tab-pane fade pt-9" id="pills-two" role="tabpanel" aria-labelledby="pills-two-tab">
+            <!-- Mockup Block -->
+            <div class="row justify-content-lg-between align-items-lg-center">
+              <div class="col-lg-4 mb-9 mb-lg-0">
+                <!-- Info -->
+                <div class="mb-5">
+                  <h3 class="h4 font-weight-semi-bold">Focus on achieving measurable outcomes</h3>
+                  <p>Now that we've aligned the details, it's time to get things mapped out and organized.</p>
+                </div>
+
+                <ul class="list-unstyled text-secondary font-size-1">
+                  <li class="media my-3">
+                    <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                    <span class="media-body">
+                      We aim high at being focused on building relationships
+                    </span>
+                  </li>
+                  <li class="media my-3">
+                    <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                    <span class="media-body">
+                      Working together on the daily requires each individual
+                    </span>
+                  </li>
+                  <li class="media my-3">
+                    <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                    <span class="media-body">
+                      It's important to stay detail oriented with every project we tackle
+                    </span>
+                  </li>
+                </ul>
+                <!-- End Info -->
+              </div>
+
+              <div class="col-lg-7 position-relative">
+                <div class="pl-md-9">
+                  <img class="img-fluid shadow-sm rounded" src="{{ url_for('static', filename='assets/img/700x525/img2.jpg') }}" alt="Image Description">
+                </div>
+
+                <!-- SVG Component -->
+                <div class="position-absolute bottom-0 left-0 w-75 z-index-n1">
+                  <figure class="ie-abstract-shapes-4">
+                    <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/components/abstract-shapes-4.svg') }}" alt="Image Description"
+                         data-parent="#SVGmockupBg">
+                  </figure>
+                </div>
+                <!-- End SVG Component -->
+              </div>
+            </div>
+            <!-- End Mockup Block -->
+          </div>
+          <div class="tab-pane fade pt-9" id="pills-three" role="tabpanel" aria-labelledby="pills-three-tab">
+            <!-- Mockup Block -->
+            <div class="row justify-content-lg-between align-items-lg-center">
+              <div class="col-lg-4 mb-9 mb-lg-0">
+                <!-- Info -->
+                <div class="mb-5">
+                  <h3 class="h4 font-weight-semi-bold">Review performance and improve strategy</h3>
+                  <p>The time has come to bring those ideas and plans to life.</p>
+                </div>
+
+                <ul class="list-unstyled text-secondary font-size-1">
+                  <li class="media my-3">
+                    <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                    <span class="media-body">
+                      Whether through commerce or just an experience
+                    </span>
+                  </li>
+                  <li class="media my-3">
+                    <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                    <span class="media-body">
+                      Now that your brand is all dressed up
+                    </span>
+                  </li>
+                  <li class="media my-3">
+                    <span class="fas fa-check text-primary mt-1 mr-3"></span>
+                    <span class="media-body">
+                      This part is really crucial in keeping the project
+                    </span>
+                  </li>
+                </ul>
+                <!-- End Info -->
+              </div>
+
+              <div class="col-lg-7 position-relative">
+                <div class="pl-md-9">
+                  <img class="img-fluid shadow-sm rounded" src="{{ url_for('static', filename='assets/img/700x525/img3.jpg') }}" alt="Image Description">
+                </div>
+
+                <!-- SVG Component -->
+                <div class="position-absolute bottom-0 left-0 w-75 z-index-n1">
+                  <figure class="ie-abstract-shapes-3">
+                    <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/components/abstract-shapes-3.svg') }}" alt="Image Description"
+                         data-parent="#SVGmockupBg">
+                  </figure>
+                </div>
+                <!-- End SVG Component -->
+              </div>
+            </div>
+            <!-- End Mockup Block -->
+          </div>
+        </div>
+        <!-- End Tab Content -->
+      </div>
+    </div>
+    <!-- End Features Section -->
+
+    <hr class="my-0">
+
+    <!-- Our Story Section -->
+    <div id="ourStorySection" class="svg-preloader container space-top-2 space-top-md-3">
+      <div class="w-lg-75 position-relative p-lg-9 mx-lg-auto">
+        <!-- Video Block -->
+        <div class="bg-white shadow rounded p-2">
+          <div class="height-400 bg-img-hero-center" style="background-image: url("{{ url_for('static', filename='assets/img/900x450/img11.jpg') }}";">
+            <a class="js-fancybox u-media-player u-media-player--centered" href="javascript:;"
+               data-src="//vimeo.com/167434033"
+               data-speed="700"
+               data-animate-in="zoomIn"
+               data-animate-out="zoomOut"
+               data-caption="Front - Responsive Website Template">
+              <span class="u-media-player__icon u-media-player__icon--lg">
+                <span class="fas fa-play u-media-player__icon-inner mr-1"></span>
+              </span>
+            </a>
+          </div>
+        </div>
+        <!-- End Video Block -->
+
+        <!-- SVG Component -->
+        <div class="content-centered-y w-75 z-index-n1">
+          <figure class="ie-abstract-shapes-7">
+            <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/components/abstract-shapes-7.svg') }}" alt="Image Description"
+                 data-parent="#ourStorySection">
+          </figure>
+        </div>
+        <!-- End SVG Component -->
+      </div>
+    </div>
+    <!-- Our Story Section -->
+
+    <!-- What We Do Section -->
+    <div id="whatWeDoSection" class="container space-2 space-md-3">
+      <div class="row justify-content-lg-between">
+        <div class="col-lg-4 mb-7 mb-lg-0">
+          <!-- Title -->
+          <small class="text-secondary text-uppercase font-weight-medium mb-2">What we do?</small>
+          <h3 class="font-weight-medium">More control and greater overview from simple, powerful features</h3>
+          <p>This is where we really begin to visualize your napkin sketches and make them into beautiful pixels.</p>
+          <!-- End Title -->
+        </div>
+
+        <div class="col-lg-7">
+          <div class="row">
+            <div class="col-sm-6 mb-3">
+              <!-- Icon Blocks -->
+              <figure id="icon26" class="svg-preloader ie-height-56 w-100 max-width-8 mb-3">
+                <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/icons/icon-26.svg') }}" alt="SVG"
+                     data-parent="#icon26">
+              </figure>
+              <h4 class="h5">Marketing</h4>
+              <p class="font-size-1">Front is an incredibly beautiful, fully responsive, and mobile-first projects on the web.</p>
+              <!-- End Icon Blocks -->
+            </div>
+
+            <div class="col-sm-6 mb-3">
+              <!-- Icon Blocks -->
+              <figure id="icon27" class="svg-preloader ie-height-56 w-100 max-width-8 mb-3">
+                <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/icons/icon-27.svg') }}" alt="SVG"
+                     data-parent="#icon27">
+              </figure>
+              <h4 class="h5">Clean design</h4>
+              <p class="font-size-1">Front template can be easily customized with its cutting-edge components and features.</p>
+              <!-- End Icon Blocks -->
+            </div>
+
+            <div class="w-100"></div>
+
+            <div class="col-sm-6 mb-3 mb-sm-0">
+              <!-- Icon Blocks -->
+              <figure id="icon25" class="svg-preloader ie-height-56 w-100 max-width-8 mb-3">
+                <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/icons/icon-25.svg') }}" alt="SVG"
+                     data-parent="#icon25">
+              </figure>
+              <h4 class="h5">Social services <span class="badge badge-success font-weight-medium badge-pill ml-1">beta</span></h4>
+              <p class="font-size-1">Front is not only for developers but also for designers, and includes a Sketch file.</p>
+              <!-- End Icon Blocks -->
+            </div>
+
+            <div class="col-sm-6">
+              <!-- Icon Blocks -->
+              <figure id="icon28" class="svg-preloader ie-height-56 w-100 max-width-8 mb-3">
+                <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/icons/icon-28.svg') }}" alt="SVG"
+                     data-parent="#icon28">
+              </figure>
+              <h4 class="h5">Creative ideas</h4>
+              <p class="font-size-1">Every component and plugin is well documented with live examples.</p>
+              <!-- End Icon Blocks -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End What We Do Section -->
+
+    <!-- Works Section -->
+    <div class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll bg-light" data-options='{direction: "reverse"}'>
+      <div class="dzsparallaxer--target">
+        <div class="container-fluid px-lg-6">
+          <div class="row justify-content-center">
+            <div class="col-3 my-4" data-parallaxanimation='[{property: "transform", value:" translate3d(0,{{val}}rem,0)", initial:"15", mid:"0", final:"-15"}]'>
+              <!-- Logo -->
+              <div class="d-none d-md-block bg-white u-lg-avatar shadow-sm rounded-circle p-4 mx-auto">
+                <img class="img-fluid" src="{{ url_for('static', filename='assets/img/160x160/img17.png') }}" alt="Image Description">
+              </div>
+              <!-- End Logo -->
+            </div>
+            <div class="col-3 mb-4" data-parallaxanimation='[{property: "transform", value:" translate3d(0,{{val}}rem,0)", initial:"5", mid:"0", final:"-5"}]'>
+              <!-- Logo -->
+              <div class="bg-white u-lg-avatar shadow-sm rounded-circle p-4 mx-auto">
+                <img class="img-fluid" src="{{ url_for('static', filename='assets/img/160x160/img12.png') }}" alt="Image Description">
+              </div>
+              <!-- End Logo -->
+            </div>
+            <div class="col-3 my-4" data-parallaxanimation='[{property: "transform", value:" translate3d(0,{{val}}rem,0)", initial:"11", mid:"0", final:"-11"}]'>
+              <!-- Logo -->
+              <div class="d-none d-md-block bg-white u-lg-avatar shadow-sm rounded-circle p-4 mx-auto">
+                <img class="img-fluid" src="{{ url_for('static', filename='assets/img/160x160/img13.png') }}" alt="Image Description">
+              </div>
+              <!-- End Logo -->
+            </div>
+          </div>
+
+          <div class="row justify-content-between">
+            <div class="col-3 mb-4" data-parallaxanimation='[{property: "transform", value:" translate3d(0,{{val}}rem,0)", initial:"7", mid:"0", final:"-7"}]'>
+              <!-- Logo -->
+              <div class="bg-white u-lg-avatar shadow-sm rounded-circle p-4">
+                <img class="img-fluid" src="{{ url_for('static', filename='assets/img/160x160/img14.png') }}" alt="Image Description">
+              </div>
+              <!-- End Logo -->
+            </div>
+            <div class="col-3 my-4" data-parallaxanimation='[{property: "transform", value:" translate3d(0,{{val}}rem,0)", initial:"7", mid:"0", final:"-7"}]'>
+              <!-- Logo -->
+              <div class="bg-white u-lg-avatar shadow-sm rounded-circle p-4 ml-auto">
+                <img class="img-fluid" src="{{ url_for('static', filename='assets/img/160x160/img15.png') }}" alt="Image Description">
+              </div>
+              <!-- End Logo -->
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-3 offset-1 my-4" data-parallaxanimation='[{property: "transform", value:" translate3d(0,{{val}}rem,0)", initial:"15", mid:"0", final:"-15"}]'>
+              <!-- Logo -->
+              <div class="d-none d-md-block bg-white u-lg-avatar shadow-sm rounded-circle p-4 ml-auto">
+                <img class="img-fluid" src="{{ url_for('static', filename='assets/img/160x160/img8.jpg') }}" alt="Image Description">
+              </div>
+              <!-- End Logo -->
+            </div>
+            <div class="col-3 offset-2 my-4" data-parallaxanimation='[{property: "transform", value:" translate3d(0,{{val}}rem,0)", initial:"11", mid:"0", final:"-11"}]'>
+              <!-- Logo -->
+              <div class="d-none d-md-block bg-white u-lg-avatar shadow-sm rounded-circle p-4 ml-auto">
+                <img class="img-fluid" src="{{ url_for('static', filename='assets/img/160x160/img6.jpg') }}" alt="Image Description">
+              </div>
+              <!-- End Logo -->
+            </div>
+          </div>
+
+          <div class="row justify-content-between">
+            <div class="col-4" data-parallaxanimation='[{property: "transform", value:" translate3d(0,{{val}}rem,0)", initial:"11", mid:"0", final:"-11"}]'>
+              <!-- Logo -->
+              <div class="bg-white u-lg-avatar shadow-sm rounded-circle p-4 mx-auto">
+                <img class="img-fluid" src="{{ url_for('static', filename='assets/img/160x160/img16.png') }}" alt="Image Description">
+              </div>
+              <!-- End Logo -->
+            </div>
+            <div class="col-4 mt-6" data-parallaxanimation='[{property: "transform", value:" translate3d(0,{{val}}rem,0)", initial:"5", mid:"0", final:"-5"}]'>
+              <!-- Logo -->
+              <div class="d-none d-sm-block bg-white u-lg-avatar shadow-sm rounded-circle p-4 mx-auto">
+                <img class="img-fluid" src="{{ url_for('static', filename='assets/img/160x160/img10.jpg') }}" alt="Image Description">
+              </div>
+              <!-- End Logo -->
+            </div>
+            <div class="col-4 mt-6" data-parallaxanimation='[{property: "transform", value:" translate3d(0,{{val}}rem,0)", initial:"15", mid:"0", final:"-15"}]'>
+              <!-- Logo -->
+              <div class="bg-white u-lg-avatar shadow-sm rounded-circle p-4 mx-auto">
+                <img class="img-fluid" src="{{ url_for('static', filename='assets/img/160x160/img11.jpg') }}" alt="Image Description">
+              </div>
+              <!-- End Logo -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container space-3 space-sm-4">
+        <!-- Title -->
+        <div class="w-md-80 w-lg-50 text-center mx-md-auto">
+          <h2 class="h1 font-weight-medium mb-5">Our branding works</h2>
+          <a class="btn btn-primary btn-pill btn-wide transition-3d-hover" href="https://themes.getbootstrap.com/product/front-multipurpose-responsive-template/" target="_blank">Learn More</a>
+        </div>
+        <!-- End Title -->
+      </div>
+    </div>
+    <!-- End Works Section -->
+
+    <!-- Services Section -->
+    <div id="servicesSection" class="container space-2 space-md-3">
+      <!-- Title -->
+      <div class="w-md-80 w-lg-40 text-center mx-md-auto mb-9">
+        <small class="text-secondary text-uppercase font-weight-medium mb-2">Services</small>
+        <h2 class="h3 font-weight-semi-bold">We create the best solution for you and your business</h2>
+      </div>
+      <!-- End Title -->
+
+      <div class="card-deck card-sm-gutters-3 d-block d-md-flex">
+        <!-- Card -->
+        <div class="card text-center mb-4 mb-md-0">
+          <div class="card-body space-3 px-5">
+            <div class="mb-4">
+              <figure id="icon24" class="svg-preloader ie-height-72 w-100 max-width-10 mx-auto mb-3">
+                <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/icons/icon-24.svg') }}" alt="SVG"
+                     data-parent="#icon24">
+              </figure>
+              <h3 class="h4">Front made simple</h3>
+              <p>Easily draft, change, customize and launch new course pages with an easy-to-use template.</p>
+            </div>
+            <a class="btn btn-primary btn-wide transition-3d-hover" href="../../documentation/index.html">Learn More</a>
+          </div>
+        </div>
+        <!-- End Card -->
+
+        <!-- Card -->
+        <div id="SVGcardSection" class="svg-preloader card z-index-2 text-center">
+          <div class="card-body space-3 px-5">
+            <div class="mb-4">
+              <figure id="icon23" class="svg-preloader ie-height-72 w-100 max-width-10 mx-auto mb-3">
+                <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/icons/icon-23.svg') }}" alt="SVG"
+                     data-parent="#icon23">
+              </figure>
+              <h3 class="h4">Front in action</h3>
+              <p>You can work with your existing website or create new pages on Front.</p>
+            </div>
+            <a class="btn btn-primary btn-wide transition-3d-hover" href="../../starter/index.html">Get Started</a>
+          </div>
+
+          <!-- SVG Component -->
+          <div class="position-absolute top-0 left-0 w-100 max-width-15 z-index-n1">
+            <figure class="ie-abstract-shapes-9">
+              <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/components/abstract-shapes-9.svg') }}" alt="Image Description"
+                   data-parent="#SVGcardSection">
+            </figure>
+          </div>
+          <!-- End SVG Component -->
+
+          <!-- SVG Component -->
+          <div class="position-absolute bottom-0 right-0 w-100 max-width-15 z-index-n1">
+            <figure class="ie-abstract-shapes-6">
+              <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/components/abstract-shapes-6.svg') }}" alt="Image Description"
+                   data-parent="#SVGcardSection">
+            </figure>
+          </div>
+          <!-- End SVG Component -->
+        </div>
+        <!-- End Card -->
+      </div>
+    </div>
+    <!-- End Services Section -->
+
+    <!-- CTA Section -->
+    <div id="SVGctaSection" class="svg-preloader position-relative gradient-half-primary-v1 text-center z-index-2 overflow-hidden">
+      <div class="container space-2">
+        <h3 class="h2 text-info font-weight-semi-bold mb-3">Ready to get started?</h3>
+        <p class="lead text-white mb-5">
+          <span class="font-weight-semi-bold">Front Template</span> – the simplest and fastest way to build sites.
+        </p>
+        <a class="btn btn-white btn-wide transition-3d-hover" href="#">Start Free Trial</a>
+      </div>
+
+      <!-- SVG Component -->
+      <figure class="position-absolute top-0 left-0 w-100 max-width-27 z-index-n1">
+        <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/components/abstract-shapes-8.svg') }}" alt="Image Description"
+             data-parent="#SVGctaSection">
+      </figure>
+      <!-- End SVG Component -->
+
+      <!-- SVG Component -->
+      <figure class="position-absolute bottom-0 right-0 w-100 max-width-27 z-index-n1">
+        <img class="js-svg-injector" src="{{ url_for('static', filename='assets/svg/components/abstract-shapes-5.svg') }}" alt="Image Description"
+             data-parent="#SVGctaSection">
+      </figure>
+      <!-- End SVG Component -->
+    </div>
+    <!-- End CTA Section -->
+{% endblock %}
